@@ -58,6 +58,24 @@ function show(response) {
 	});
 }
 
+function tuner(response) {
+	console.log("Request handler 'tuner' was called.");
+	var body = '<html>'+
+		'<head>'+
+		'<meta http-equiv="Content-Type" content="text/html; '+ 'charset=UTF-8" />'+
+		'</head>'+
+		'<body>'+
+		'<p>' + "Testing123"
+		'</p>'+
+		'</body>'+
+		'</html>';
+		
+		response.writeHead(200, {"Content-Type": "text/html"});
+		response.write(body);
+		response.end();
+}
+
 exports.start = start;
 exports.upload = upload;
 exports.show = show;
+exports.tuner = tuner;
