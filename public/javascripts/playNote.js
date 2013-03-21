@@ -20,8 +20,8 @@ audioPlayerElittle.load();
 playNote = function(index,count) {
     var noteStr;
     if(index-count==0) {audioPlayerE.play()}
-    if(index-count==1) {audioPlayerA.play()}
-    if(index-count==2) {audioPlayerD.play()}
+    if(index-count==1) {audioPlayerA.play(); console.log('hello')}
+    if(index-count==2) {audioPlayerD.play(); console.log('hello')}
     if(index-count==3) {audioPlayerG.play()}
     if(index-count==4) {audioPlayerB.play()}
     if(index-count==5) {audioPlayerElittle.play()}
