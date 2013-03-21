@@ -3,15 +3,8 @@
     var playColor = 'white';
     var width = $(window).width();
     var height = $(window).height();
-    paper.view.viewSize = [width,height];
+    paper.view.viewSize = [width,height];    
 
-    globals.divisor = 20;
-    
-    if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        globals.divisor = 5;
-        console.log('changed divisor');
-    }
-    
     // Create a symbol, which we will use to place instances of later:
     var path = new Path.Circle(new Point(0, 0), 10);
     path.style = {
@@ -41,7 +34,7 @@
             
             // Move the item 1/20th of its width to the right. This way
             // larger circles move faster than smaller circles:
-            item.position.x += item.bounds.width / globals.divisor;
+            item.position.x += item.bounds.width / (width/20);
     
             // If the item has left the view on the right, move it back
             // to the left:
