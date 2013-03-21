@@ -1,7 +1,7 @@
     // The amount of circles we want to make:
     globals = {};
     globals.playChecker = 0;
-    paper.view.viewSize = [1440,1000];
+    paper.view.viewSize = [$(window).width(),$(window).height()];
 
     var count = 150;
     
