@@ -76,9 +76,11 @@
     };
     
     globals.restoreColors = function() {
+/*
         for (var i=count; i<count+6; i++) {
             project.activeLayer.children[i].style.fillColor = defColor;
-        }     
+        } 
+*/    
     }
         
     function onMouseDown(event) {
