@@ -3,6 +3,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: black;
     -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
 }
 
 a {
@@ -10,6 +12,11 @@ a {
 }
 
 .paperDots {
-
+-webkit-backface-visibility: hidden;
+-webkit-transform: translate3d(0,0,0);
 }
 
+canvas {
+-webkit-backface-visibility: hidden;
+-webkit-transform: translate3d(0,0,0);
+}
