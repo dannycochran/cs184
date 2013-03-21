@@ -8,7 +8,7 @@
     globals.divisor = 20;
     
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        globals.divisor = 100;
+        globals.divisor = 5;
         console.log('changed divisor');
     }
     
