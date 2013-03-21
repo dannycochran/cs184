@@ -1,11 +1,12 @@
 {
-  "name": "cs184",
+  "name": "MySite",
   "version": "0.0.1",
+  "private": "true",
   "dependencies": {
-    "express": "2.5.x"
+    "express": "3.0.0alpha4",
+    "jade": "*",
+    "stylus": "*",
+    "nib": "*"
   },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
-  }
+  "main": "app.js"
 }
