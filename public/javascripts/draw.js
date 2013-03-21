@@ -5,10 +5,11 @@
     var height = $(window).height();
     paper.view.viewSize = [width,height];
 
-    var divisor = 20;
+    globals.divisor = 20;
     
     if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-        divisor = 100;
+        globals.divisor = 100;
+        console.log('changed divisor');
     }
     
     // Create a symbol, which we will use to place instances of later:
@@ -40,7 +41,7 @@
             
             // Move the item 1/20th of its width to the right. This way
             // larger circles move faster than smaller circles:
-            item.position.x += item.bounds.width / divisor;
+            item.position.x += item.bounds.width / globals.divisor;
     
             // If the item has left the view on the right, move it back
             // to the left:
