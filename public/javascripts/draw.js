@@ -72,7 +72,7 @@
         for (var i=count; i<count+6; i++) {
             project.activeLayer.children[i].style.fillColor = defColor;
         }
-        globals.playChecker = 0;     
+/*         globals.playChecker = 0;      */
     }
     
 	var eColor = '#668CFF',

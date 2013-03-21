@@ -1,14 +1,4 @@
 extends layout
 block content
-	p
-	| <p id="audioA" style="color:white" class="startAnim">Start Animation!</p>
 	canvas( id="draw", class="paperDots", resize="true", keepalive="true" )
 	script( type="text/paperscript", src="javascripts/draw.js", canvas="draw")
-	script( type="text/javascript" )
-		$(".startAnim").click(function() {
-			if(globals.playChecker==0) {
-				globals.playChecker = 1;
-			} else {
-				globals.playChecker = 0;
-			}
-		});
