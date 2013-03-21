@@ -46,6 +46,8 @@
         }
         }
     }
+    var playColor = "green";
+    var defColor = "white";
     var strings = 6;
     var stringSize = new Size(width/12,height/2);
     var stringPadding = ((width/2)/strings+1)*2;
@@ -54,7 +56,53 @@
         var rectangle = new Rectangle(point,stringSize);
         var path = new Path.Rectangle(rectangle);
         path.style = {
-            fillColor: 'white',
+            fillColor: defColor,
             strokeColor: 'black',
         }   
-    }    
+    }
+/*
+    function onMouseDown(event) {
+        console.log(width,project.activeLayer.children[50].segments[0].point.x,event.point.x,event.point.y);
+        project.activeLayer.children[50].style.fillColor='green';
+        console.log(project.activeLayer.children); 
+    }
+*/
+
+    var hitOptions = {
+        segments: true,
+        stroke: true,
+        fill: true,
+        tolerance: 5
+    };
+    
+    globals.restoreColors = function() {
+        for (var i=count; i<count+6; i++) {
+            project.activeLayer.children[i].style.fillColor = defColor;
+        }     
+    }
+        
+    function onMouseDown(event) {
+        var hitResult = project.hitTest(event.point, hitOptions);
+        try {
+            if (hitResult.item.index>=count && hitResult.item.index<=count+5){
+                globals.restoreColors();
+                playNote(hitResult.item.index,count);
+            }
+            if (hitResult.item.index==count) {
+                hitResult.item.style.fillColor = playColor;
+            } else if (hitResult.item.index==count+1) {
+                    hitResult.item.style.fillColor = playColor;
+            } else if (hitResult.item.index==count+2) {
+                    hitResult.item.style.fillColor = playColor;
+            } else if (hitResult.item.index==count+3) {
+                    hitResult.item.style.fillColor = playColor;      
+            } else if (hitResult.item.index==count+4) {
+                    hitResult.item.style.fillColor = playColor;
+            } else if (hitResult.item.index==count+5) {
+                    hitResult.item.style.fillColor = playColor;
+            }
+        }
+        catch(err){} 
+    }
+    
+        
