@@ -3,7 +3,7 @@
     globals.playChecker = 0;
     paper.view.viewSize = [$(window).width(),$(window).height()];
 
-    var count = 150;
+    var count = 50;
     
     // Create a symbol, which we will use to place instances of later:
     var path = new Path.Circle(new Point(0, 0), 10);
