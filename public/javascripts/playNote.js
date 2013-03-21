@@ -1,16 +1,39 @@
-var audioPlayer = new Audio();
+var audioPlayerE = new Audio();
+audioPlayerE.src="strings/E.mp3"
+audioPlayerE.load();
+var audioPlayerA = new Audio();
+audioPlayerA.src="strings/A.mp3"
+audioPlayerA.load();
+var audioPlayerD = new Audio();
+audioPlayerD.src="strings/D.mp3";
+audioPlayerD.load();
+var audioPlayerG = new Audio();
+audioPlayerG.src="strings/G.mp3";
+audioPlayerG.load();
+var audioPlayerB = new Audio();
+audioPlayerB.src="strings/B.mp3";
+audioPlayerB.load();
+var audioPlayerElittle = new Audio();
+audioPlayerElittle.src="strings/Elittle.mp3";
+audioPlayerElittle.load();
+
 playNote = function(index,count) {
     var noteStr;
-    if(index-count==0) {noteStr="../strings/E"}
-    if(index-count==1) {noteStr="../strings/A"}
-    if(index-count==2) {noteStr="../strings/D"}
-    if(index-count==3) {noteStr="../strings/G"}
-    if(index-count==4) {noteStr="../strings/B"}
-    if(index-count==5) {noteStr="../strings/Elittle"}
-	audioPlayer.src="sound/" + noteStr + ".mp3";
-	audioPlayer.play();
+    if(index-count==0) {audioPlayerE.play()}
+    if(index-count==1) {audioPlayerA.play(); console.log('hello')}
+    if(index-count==2) {audioPlayerD.play(); console.log('hello')}
+    if(index-count==3) {audioPlayerG.play()}
+    if(index-count==4) {audioPlayerB.play()}
+    if(index-count==5) {audioPlayerElittle.play()}
 }
-audioPlayer.addEventListener('ended',revertColor,false);
+
+audioPlayerE.addEventListener('ended',revertColor,false);
+audioPlayerA.addEventListener('ended',revertColor,false);
+audioPlayerD.addEventListener('ended',revertColor,false);
+audioPlayerG.addEventListener('ended',revertColor,false);
+audioPlayerB.addEventListener('ended',revertColor,false);
+audioPlayerElittle.addEventListener('ended',revertColor,false);
+
 function revertColor() {
     globals.restoreColors();
 }
