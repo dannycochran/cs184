@@ -1,20 +1,11 @@
-!!!5
+doctype 5
 html
-  head
-    title #{title} - Strummify
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js")
-    script(type="text/javascript", src="https://raw.github.com/mbostock/d3/master/d3.js")
-    script(type='text/paperscript', src="http://f.cl.ly/items/2S1U2h1V2l063Z2j2v27/paperDots.js")
-    script(type='text/javascript', src="http://f.cl.ly/items/0o3k162L1M2Y082f2D0u/paper.js")
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src="/socket.io/socket.io.js")
+		script(src="/javascripts/socket.js")
+		script(src="/javascripts/paper.js")
 
-  body
-    header
-      h1 My Site
-    .container
-      .main-content
-        block content
-      .sidebar
-        block sidebar
-    footer
-      p Strummify
+	body(style="padding:0;")
+		block content
