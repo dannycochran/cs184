@@ -1,7 +1,7 @@
     // The amount of circles we want to make:
     globals = {};
     globals.playChecker = 0;
-    globals.color = "red";
+    var playColor = 'white';
     var width = $(window).width();
     var height = $(window).height()-17;
     paper.view.viewSize = [width,height];
@@ -32,7 +32,7 @@
         // the position of the placed symbols:
         for (var i = 0; i < count; i++) {
             var item = project.activeLayer.children[i];
-            item.symbol.definition.style.fillColor = globals.color;
+            item.symbol.definition.style.fillColor = playColor;
             
             // Move the item 1/20th of its width to the right. This way
             // larger circles move faster than smaller circles:
@@ -46,7 +46,7 @@
         }
         }
     }
-    var playColor = "green";
+
     var defColor = "white";
     var strings = 6;
     var stringSize = new Size(width/12,height/2);
@@ -60,13 +60,6 @@
             strokeColor: 'black',
         }   
     }
-/*
-    function onMouseDown(event) {
-        console.log(width,project.activeLayer.children[50].segments[0].point.x,event.point.x,event.point.y);
-        project.activeLayer.children[50].style.fillColor='green';
-        console.log(project.activeLayer.children); 
-    }
-*/
 
     var hitOptions = {
         segments: true,
@@ -78,9 +71,17 @@
     globals.restoreColors = function() {
         for (var i=count; i<count+6; i++) {
             project.activeLayer.children[i].style.fillColor = defColor;
-        }     
+        }
+        globals.playChecker = 0;     
     }
-        
+    
+	var eColor = '#668CFF',
+	   aColor = '#66FFD9',
+	   dColor = '#8CFF66',
+	   gColor = '#FFD966',
+	   bColor = '#FF668C',
+	   eLittleColor = '#D966FF';
+	    
     function onMouseDown(event) {
         var hitResult = project.hitTest(event.point, hitOptions);
         try {
@@ -89,18 +90,25 @@
                 playNote(hitResult.item.index,count);
             }
             if (hitResult.item.index==count) {
-                hitResult.item.style.fillColor = playColor;
+                hitResult.item.style.fillColor = eColor;
+                playColor = eColor;
             } else if (hitResult.item.index==count+1) {
-                    hitResult.item.style.fillColor = playColor;
+                    hitResult.item.style.fillColor = aColor;
+                    playColor = aColor;
             } else if (hitResult.item.index==count+2) {
-                    hitResult.item.style.fillColor = playColor;
+                    hitResult.item.style.fillColor = dColor;
+                    playColor = dColor;
             } else if (hitResult.item.index==count+3) {
-                    hitResult.item.style.fillColor = playColor;      
+                    hitResult.item.style.fillColor = gColor;      
+                    playColor = gColor;            
             } else if (hitResult.item.index==count+4) {
-                    hitResult.item.style.fillColor = playColor;
+                    hitResult.item.style.fillColor = bColor;
+                    playColor = bColor;            
             } else if (hitResult.item.index==count+5) {
-                    hitResult.item.style.fillColor = playColor;
+                    hitResult.item.style.fillColor = eLittleColor;
+                    playColor = eLittleColor;            
             }
+            globals.playChecker = 1;
         }
         catch(err){} 
     }
