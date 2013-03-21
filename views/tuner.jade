@@ -1,0 +1,11 @@
+extend layout
+
+block content
+	p
+		| <p style="color:red" onclick="makeCircle()">Horseshit</p>
+		| <canvas class="paperDots" id="paperDots" keepalive="true"></canvas>
+  
+	script(type='text/javascript')
+		var freqScale = d3.scale.linear()
+		console.log(freqScale) 
+		console.log("#{scripts}")
