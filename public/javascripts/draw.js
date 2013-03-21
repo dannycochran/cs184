@@ -5,6 +5,11 @@
     var height = $(window).height();
     paper.view.viewSize = [width,height];
 
+    var divisor = 20;
+    
+    if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+        divisor = 100;
+    }
     
     // Create a symbol, which we will use to place instances of later:
     var path = new Path.Circle(new Point(0, 0), 10);
@@ -13,8 +18,9 @@
         strokeColor: 'black'
     };
     
-    var symbol = new Symbol(path);
     var count = 50;
+    var symbol = new Symbol(path);
+    
     // Place the instances of the symbol:
     for (var i = 0; i < count; i++) {
         // The center position is a random point in the view:
@@ -34,7 +40,7 @@
             
             // Move the item 1/20th of its width to the right. This way
             // larger circles move faster than smaller circles:
-            item.position.x += item.bounds.width / (width/20);
+            item.position.x += item.bounds.width / divisor;
     
             // If the item has left the view on the right, move it back
             // to the left:
@@ -50,7 +56,7 @@
     var stringSize = new Size(width/12,height/2);
     var stringPadding = ((width/2)/strings+1)*2;
     for (var i = 0; i < strings; i++) {
-        var point = new Point((stringPadding/6)+(i*stringPadding),height/5);
+        var point = new Point((stringPadding/6)+(i*stringPadding),height/4);
         var rectangle = new Rectangle(point,stringSize);
         var path = new Path.Rectangle(rectangle);
         path.style = {
