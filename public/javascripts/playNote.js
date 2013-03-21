@@ -1,4 +1,3 @@
-var spanner = document.createElement("span")
 var audioPlayerE = new Audio();
 audioPlayerE.src="strings/E.mp3"
 audioPlayerE.load();
@@ -17,7 +16,6 @@ audioPlayerB.load();
 var audioPlayerElittle = new Audio();
 audioPlayerElittle.src="strings/Elittle.mp3";
 audioPlayerElittle.load();
-spanner.appendChild(audioPlayerElittle);
 
 playNote = function(index,count) {
     var noteStr;
