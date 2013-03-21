@@ -50,7 +50,7 @@
     var stringSize = new Size(width/12,height/2);
     var stringPadding = ((width/2)/strings+1)*2;
     for (var i = 0; i < strings; i++) {
-        var point = new Point(i*stringPadding,height/5);
+        var point = new Point((stringPadding/6)+(i*stringPadding),height/5);
         var rectangle = new Rectangle(point,stringSize);
         var path = new Path.Rectangle(rectangle);
         path.style = {
