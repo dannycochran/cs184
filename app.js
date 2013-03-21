@@ -5,7 +5,7 @@ var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
 
-
+var port = process.env.PORT || 5000;
 var app = express()
 
 function compile(str, path) {
@@ -30,4 +30,4 @@ app.get('/', function (req, res) {
   )
 })
 
-app.listen(3000)
+app.listen(port)
