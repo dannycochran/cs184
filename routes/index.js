@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Strummify Tuner' });
+  res.render('index', { title: 'Tuner' });
 };
