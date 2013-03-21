@@ -1,7 +1,10 @@
     // The amount of circles we want to make:
     globals = {};
     globals.playChecker = 0;
-    paper.view.viewSize = [$(window).width(),$(window).height()];
+    globals.color = "red";
+    var width = $(window).width();
+    var height = $(window).height()-17;
+    paper.view.viewSize = [width,height];
 
     var count = 50;
     
@@ -29,6 +32,7 @@
         // the position of the placed symbols:
         for (var i = 0; i < count; i++) {
             var item = project.activeLayer.children[i];
+            item.symbol.definition.style.fillColor = globals.color;
             
             // Move the item 1/20th of its width to the right. This way
             // larger circles move faster than smaller circles:
@@ -42,3 +46,15 @@
         }
         }
     }
+    var strings = 6;
+    var stringSize = new Size(width/12,height/2);
+    var stringPadding = ((width/2)/strings+1)*2;
+    for (var i = 0; i < strings; i++) {
+        var point = new Point(i*stringPadding,height/5);
+        var rectangle = new Rectangle(point,stringSize);
+        var path = new Path.Rectangle(rectangle);
+        path.style = {
+            fillColor: 'white',
+            strokeColor: 'black',
+        }   
+    }    
