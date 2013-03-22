@@ -85,6 +85,7 @@ if(!navigator.userAgent.match(/iPhone/i) && !navigator.userAgent.match(/iPod/i) 
     }
 } else {
 // called in draw.js when rectangle clicked
+        console.log('helloiPad')
     playNote = function(index,count) {
         if(index-count==0) {
             audioPlayerE.play();
