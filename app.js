@@ -53,12 +53,14 @@ function saveEmail(email) {
     var collections = ["emails"]
     var db = require("mongojs").connect(databaseUrl, collections);
     db.emails.save({emailAddress: email})
+/*
     db.emails.find({email: "daniel@cochrans.org"}, function(err, emails) {
       if( err || !emails) console.log("No users found");
       else emails.forEach( function(userEmail) {
         console.log(userEmail);
       } );
     });
+*/
 }
 
 // Enable Socket.io
