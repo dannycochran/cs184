@@ -52,10 +52,12 @@
     for (var i = 0; i < strings; i++) {
         var point = new Point((stringPadding/6)+(i*stringPadding),height/4);
         var rectangle = new Rectangle(point,stringSize);
-        var path = new Path.Rectangle(rectangle);
+        var cornerSize = new Size(20,20);
+        var path = new Path.RoundRectangle(rectangle,cornerSize);
         path.style = {
             fillColor: defColor,
-            strokeColor: 'black',
+            strokeColor: 'white',
+            strokeWidth: 5
         }   
     }
 
@@ -66,9 +68,11 @@
         tolerance: 5
     };
     
-    globals.restoreColors = function() {
+    function restoreColors(currentIndex) {
         for (var i=count; i<count+6; i++) {
-            project.activeLayer.children[i].style.fillColor = defColor;
+            if(i!==currentIndex) {
+                project.activeLayer.children[i].style.fillColor = defColor;
+            }
         }
 /*         globals.playChecker = 0;      */
     }
@@ -84,7 +88,7 @@
         var hitResult = project.hitTest(event.point, hitOptions);
         try {
             if (hitResult.item.index>=count && hitResult.item.index<=count+5){
-                globals.restoreColors();
+                restoreColors(hitResult.item.index);
                 playNote(hitResult.item.index,count);
             }
             if (hitResult.item.index==count) {

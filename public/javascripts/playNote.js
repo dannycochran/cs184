@@ -26,14 +26,3 @@ playNote = function(index,count) {
     if(index-count==4) {audioPlayerB.play()}
     if(index-count==5) {audioPlayerElittle.play()}
 }
-
-audioPlayerE.addEventListener('ended',revertColor,false);
-audioPlayerA.addEventListener('ended',revertColor,false);
-audioPlayerD.addEventListener('ended',revertColor,false);
-audioPlayerG.addEventListener('ended',revertColor,false);
-audioPlayerB.addEventListener('ended',revertColor,false);
-audioPlayerElittle.addEventListener('ended',revertColor,false);
-
-function revertColor() {
-    globals.restoreColors();
-}
