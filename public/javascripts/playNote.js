@@ -1,20 +1,25 @@
+var extension = ".mp3"
+if ((navigator.userAgent.indexOf('Firefox') != -1) || (navigator.userAgent.indexOf('Opera') != -1)) {
+    extension = ".ogg"
+}
+
 var audioPlayerE = new Audio();
-audioPlayerE.src="strings/E.mp3"
+audioPlayerE.src="strings/E" + extension
 audioPlayerE.load();
 var audioPlayerA = new Audio();
-audioPlayerA.src="strings/A.mp3"
+audioPlayerA.src="strings/A" + extension
 audioPlayerA.load();
 var audioPlayerD = new Audio();
-audioPlayerD.src="strings/D.mp3";
+audioPlayerD.src="strings/D" + extension;
 audioPlayerD.load();
 var audioPlayerG = new Audio();
-audioPlayerG.src="strings/G.mp3";
+audioPlayerG.src="strings/G" + extension;
 audioPlayerG.load();
 var audioPlayerB = new Audio();
-audioPlayerB.src="strings/B.mp3";
+audioPlayerB.src="strings/B" + extension;
 audioPlayerB.load();
 var audioPlayerElittle = new Audio();
-audioPlayerElittle.src="strings/Elittle.mp3";
+audioPlayerElittle.src="strings/Elittle" + extension;
 audioPlayerElittle.load();
 
 playNote = function(index,count) {
