@@ -9,7 +9,7 @@
     var path = new Path.Circle(new Point(0, 0), 10);
     path.style = {
         fillColor: 'white',
-        strokeColor: 'black'
+        strokeColor: playColor
     };
     
     var count = 50;
@@ -34,7 +34,7 @@
             
             // Move the item 1/20th of its width to the right. This way
             // larger circles move faster than smaller circles:
-            item.position.x += item.bounds.width / (width/20);
+            item.position.x += item.bounds.width / (width/40);
     
             // If the item has left the view on the right, move it back
             // to the left:
