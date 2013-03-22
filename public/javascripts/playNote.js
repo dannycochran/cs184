@@ -35,59 +35,80 @@ playNote = function(index,count) {
     var noteStr;
     if(index-count==0) {
         audioPlayerA.pause();
+        audioPlayerA.load();
         audioPlayerD.pause();
+        audioPlayerD.load();
         audioPlayerG.pause();
+        audioPlayerG.load();
         audioPlayerB.pause();
+        audioPlayerB.load();
         audioPlayerElittle.pause();
-        audioPlayerE.load();
+        audioPlayerElittle.load();
         audioPlayerE.play();
     }
     else if(index-count==1) {
         audioPlayerE.pause();
+        audioPlayerE.load();
         audioPlayerD.pause();
+        audioPlayerD.load();
         audioPlayerG.pause();
+        audioPlayerG.load();
         audioPlayerB.pause();
+        audioPlayerB.load();
         audioPlayerElittle.pause();
-        audioPlayerA.load();
+        audioPlayerElittle.load();
         audioPlayerA.play();
     }
     else if(index-count==2) {
         audioPlayerE.pause();
+        audioPlayerE.load();
         audioPlayerA.pause();
+        audioPlayerA.load();
         audioPlayerG.pause();
+        audioPlayerG.load();
         audioPlayerB.pause();
+        audioPlayerB.load();
         audioPlayerElittle.pause();
-        audioPlayerD.load();
+        audioPlayerElittle.load();
         audioPlayerD.play();
     }    
     else if(index-count==3) {
-
         audioPlayerE.pause();
+        audioPlayerE.load();
         audioPlayerA.pause();
+        audioPlayerA.load();
         audioPlayerD.pause();
+        audioPlayerD.load();
         audioPlayerB.pause();
+        audioPlayerB.load();
         audioPlayerElittle.pause();
-        audioPlayerG.load();
+        audioPlayerElittle.load();
         audioPlayerG.play();
     }
     else if(index-count==4) {
-
         audioPlayerE.pause();
+        audioPlayerE.load();
         audioPlayerA.pause();
+        audioPlayerA.load();
         audioPlayerD.pause();
+        audioPlayerD.load();
         audioPlayerG.pause();
+        audioPlayerG.load();
         audioPlayerElittle.pause();
-        audioPlayerB.load();
+        audioPlayerElittle.load();
         audioPlayerB.play();
     }
     else if(index-count==5) {
         audioPlayerE.pause();
+        audioPlayerE.load();
         audioPlayerA.pause();
+        audioPlayerA.load();
         audioPlayerD.pause();
+        audioPlayerD.load();
         audioPlayerG.pause();
+        audioPlayerG.load();
         audioPlayerB.pause();
-        audioPlayerElittle.load();
+        audioPlayerB.load();
         audioPlayerElittle.play();
     }
 }
-
