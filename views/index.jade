@@ -1,4 +1,5 @@
 extends layout
 block content
 	canvas( id="draw", class="paperDots", resize="true", keepalive="true" )
+	script(src="javascripts/dsp.js")
 	script( type="text/paperscript", src="javascripts/draw.js", canvas="draw")

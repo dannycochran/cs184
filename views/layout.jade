@@ -10,8 +10,17 @@ html
 		script(src="/javascripts/jquery.js")
 		script(src="/javascripts/jquery-ui.js")
 		script(src="/javascripts/playNote.js")
+		script(src="/javascripts/dsp.js")
+		script(src="/javascripts/browser.js")
+		script(src="/javascripts/tuner.js")
+		script(src="/javascripts/modernizr.js")
+		script(src="/javascripts/underscore.js")
+
+
+
 
 	body(style="padding:0;")
 		block content
 	script(type="text/javascript")
 		document.ontouchmove = function(e) {e.preventDefault()};
+		window.onload = function() {browserCheck()};

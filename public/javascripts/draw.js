@@ -114,3 +114,40 @@
         }
         catch(err){} 
     }
+    
+    // if using a real guitar
+    globals.callPaperTuner = function(noteStr,freq,diff) {
+        console.log(freq);
+        if (noteStr == "E") {
+            if(freq>200) {
+                project.activeLayer.children[count].style.fillColor = eColor;
+                playColor = eColor;
+                restoreColors(count+5);
+            } else {
+                project.activeLayer.children[count+5].style.fillColor = eColor;
+                playColor = eLittleColor;
+                restoreColors(count);
+            }
+        }
+        if (noteStr == "A") {
+            project.activeLayer.children[count+1].style.fillColor = aColor;
+            playColor = aColor
+            restoreColors(count+1);
+        }
+        if (noteStr == "D") {
+            project.activeLayer.children[count+2].style.fillColor = dColor;
+            playColor = dColor
+            restoreColors(count+2);
+        }
+        if (noteStr == "G") {
+            project.activeLayer.children[count+3].style.fillColor = gColor;
+            playColor = gColor
+            restoreColors(count+3);
+        }
+        if (noteStr == "B") {
+            project.activeLayer.children[count+4].style.fillColor = bColor;
+            playColor = bColor
+            restoreColors(count+4);
+        }
+        globals.playChecker = 1;
+    }
