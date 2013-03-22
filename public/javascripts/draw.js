@@ -117,16 +117,16 @@
     
     // if using a real guitar
     globals.callPaperTuner = function(noteStr,freq,diff) {
-        console.log(freq);
+        console.log(freq,noteStr);
         if (noteStr == "E") {
-            if(freq>200) {
+            if(freq<200) {
                 project.activeLayer.children[count].style.fillColor = eColor;
                 playColor = eColor;
-                restoreColors(count+5);
+                restoreColors(count);
             } else {
                 project.activeLayer.children[count+5].style.fillColor = eColor;
                 playColor = eLittleColor;
-                restoreColors(count);
+                restoreColors(count+5);
             }
         }
         if (noteStr == "A") {
@@ -151,3 +151,5 @@
         }
         globals.playChecker = 1;
     }
+    
+    // resize rectangles
