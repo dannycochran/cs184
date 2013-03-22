@@ -1,9 +1,9 @@
 extends layout
 block content
     | <div class="signup">
-    | <p id="request">Strummify isn't live yet, but drop us your email and we'll notify you when we're ready.<br><br> In the mean time, enjoy our chromatic tuner.</p> 
+    | <p id="request">Strummify isn't live yet, but drop us your email and we'll notify you when we're ready.<br>
     | <form method="post" action="/signup">
-    | <input class="submission" type="text" name="user[email]">
+    | <input autocapitalize="off" autocorrect="off" class="submission" type="text" name="user[email]">
     | <br>
     | <br>
     | <a class="bttn" onclick="$(this).closest('form').submit()"><span>start tuning</span></a> 

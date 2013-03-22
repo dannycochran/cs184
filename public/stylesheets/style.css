@@ -41,11 +41,11 @@ canvas {
 #error {
     margin-top: 15px;
     color: #E3170D;
-    font-family: Rockwell;
+    font-family: Rockwell, Georgia;
     font-size: 20px;
 }
 
-.submission { font-size: 40px; width: 300px; height: 40px; border: 3px solid #999999; padding: 5px; }
+.submission { font-size: 40px; width: 500px; height: 40px; border: 3px solid #999999; padding: 5px; }
 
 .bttn {		
 	display: inline-block;
@@ -71,7 +71,7 @@ canvas {
     color: white;
 	display: inline-block;
 	padding: 10px  20px;
-	font-family: "cooper-black-std-1", "cooper-black-std-2", Helvetica, Arial, sans-serif;
+	font-family: Rockwell, Georgia;
 	line-height: 1;
 	text-shadow: 0 -1px 1px rgba(19,65,88,.8);
 	background: #FF5721;
