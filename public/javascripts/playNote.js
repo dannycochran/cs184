@@ -6,26 +6,25 @@ if ((navigator.userAgent.indexOf('Firefox') != -1) || (navigator.userAgent.index
 // initialize / load audio players
 var audioPlayerE = new Audio();
 audioPlayerE.src="strings/E" + extension
-audioPlayerE.load();
+audioPlayerE.preload = true;
 var audioPlayerA = new Audio();
 audioPlayerA.src="strings/A" + extension
-audioPlayerA.load();
+audioPlayerE.preload = true;
 var audioPlayerD = new Audio();
 audioPlayerD.src="strings/D" + extension;
-audioPlayerD.load();
+audioPlayerE.preload = true;
 var audioPlayerG = new Audio();
 audioPlayerG.src="strings/G" + extension;
-audioPlayerG.load();
+audioPlayerE.preload = true;
 var audioPlayerB = new Audio();
 audioPlayerB.src="strings/B" + extension;
-audioPlayerB.load();
+audioPlayerE.preload = true;
 var audioPlayerElittle = new Audio();
 audioPlayerElittle.src="strings/Elittle" + extension;
-audioPlayerElittle.load();
+audioPlayerE.preload = true;
     
 // if not using mobile, use stronger playback system, otherwise, use weak one
 if(!navigator.userAgent.match(/iPhone/i) && !navigator.userAgent.match(/iPod/i) && !navigator.userAgent.match(/iPad/i) && !navigator.userAgent.match(/Android/i)) {
-    console.log('hello')
     // called in draw.js when rectangle clicked
     playNote = function(index,count) {
         if(index-count==0) {
@@ -85,7 +84,6 @@ if(!navigator.userAgent.match(/iPhone/i) && !navigator.userAgent.match(/iPod/i) 
     }
 } else {
 // called in draw.js when rectangle clicked
-        console.log('helloiPad')
     playNote = function(index,count) {
         if(index-count==0) {
             audioPlayerE.play();

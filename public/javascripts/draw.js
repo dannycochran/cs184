@@ -6,7 +6,7 @@
     paper.view.viewSize = [width,height];    
 
     // Create a symbol, which we will use to place instances of later:
-    var path = new Path.Circle(new Point(0, 0), 10);
+    var path = new Path.Circle(new Point(0, 0), 30);
     path.style = {
         fillColor: 'white',
         strokeColor: playColor
@@ -53,12 +53,12 @@
         var point = new Point((stringPadding/6)+(i*stringPadding),height/4);
         var rectangle = new Rectangle(point,stringSize);
         var cornerSize = new Size(20,20);
-        var path = new Path.RoundRectangle(rectangle,cornerSize);
-        path.style = {
+        var rectPath = new Path.RoundRectangle(rectangle,cornerSize);
+        rectPath.style = {
             fillColor: defColor,
             strokeColor: 'white',
             strokeWidth: 5
-        }   
+        }
     }
 
     var hitOptions = {
@@ -114,5 +114,3 @@
         }
         catch(err){} 
     }
-    
-        
