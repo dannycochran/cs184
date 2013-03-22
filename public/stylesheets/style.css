@@ -23,3 +23,83 @@ canvas {
 -webkit-transform: translate3d(0,0,0);
 -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+#error {
+    margin-top: 15px;
+    color: #E3170D;
+    font-family: Rockwell;
+    font-size: 12px;
+}
+
+#request {
+    color: white;
+    font-family: Rockwell;
+}
+
+.signup {
+    display: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 18%;
+    text-align: center;
+}
+
+.submission { width: 250px; height: 20px; border: 3px solid #999999; padding: 5px; }
+
+.bttn {		
+	display: inline-block;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow:
+		0 8px 0 #D43D1A,
+		0 15px 20px rgba(0,0,0,.35);
+	-moz-box-shadow:
+		0 8px 0 #D43D1A,
+		0 15px 20px rgba(0,0,0,.35);
+	box-shadow:
+		0 8px 0 #D43D1A,
+		0 15px 20px rgba(0,0,0,.35);
+	-webkit-transition: -webkit-box-shadow .2s ease-in-out;
+	-moz-transition: -moz-box-shadow .2s ease-in-out;
+	-o-transition: -o-box-shadow .2s ease-in-out;
+	transition: box-shadow .2s ease-in-out;
+	}
+.bttn span {	
+    color: white;
+	display: inline-block;
+	padding: 10px  20px;
+	font-family: "cooper-black-std-1", "cooper-black-std-2", Helvetica, Arial, sans-serif;
+	line-height: 1;
+	text-shadow: 0 -1px 1px rgba(19,65,88,.8);
+	background: #FF5721;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF5721), to(#FF8C69));
+	background: -moz-linear-gradient(#FF5721, #FF8C69);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,.15);
+	-moz-box-shadow: inset 0 -1px 1px rgba(255,255,255,.15);
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,.15);
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	-moz-transition: -moz-transform .2s ease-in-out;
+	-o-transition: -o-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+	}
+.bttn:active {	
+	-webkit-box-shadow: 
+		0 8px 0 #D43D1A,
+		0 12px 10px rgba(0,0,0,.3);
+	-moz-box-shadow: 
+		0 8px 0 #D43D1A,
+		0 12px 10px rgba(0,0,0,.3);
+	box-shadow: 
+		0 8px 0 #D43D1A,
+		0 12px 10px rgba(0,0,0,.3);
+	}
+.bttn:active span {	
+	-webkit-transform: translate(0, 4px);
+	-moz-transform: translate(0, 4px);
+	-o-transform: translate(0, 4px);
+	transform: translate(0, 4px);
+	}

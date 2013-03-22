@@ -1,4 +1,3 @@
-
 // Express requires these dependencies
 var express = require('express')
   , routes = require('./routes')
@@ -17,8 +16,8 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use(app.router);
 });
 
 // Configure error handling
@@ -27,8 +26,40 @@ app.configure('development', function(){
 });
 
 // Setup Routes
-app.get('/', routes.index);
+app.get('/', routes.signup);
+app.get('/signupFail', routes.signupFail);
+app.get('/signup', routes.signup);
+app.get('/tuner', routes.index);
 app.get('/users', user.list);
+        
+// configure email authentication
+app.post('/signup', function(res,req) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;
+    });
+    if (res.body.user.email.match(/@/i)) {
+        var email = res.body.user.email;
+        saveEmail(email);
+        req.redirect('/tuner');
+    } else {
+        req.redirect('/signupFail');
+    }
+});
+
+// configure database (not yet complete :( )
+function saveEmail(email) {
+    var databaseUrl = "mydb"; // "username:password@example.com/mydb"
+    var collections = ["emails"]
+    var db = require("mongojs").connect(databaseUrl, collections);
+    db.emails.save({emailAddress: email})
+    db.emails.find({email: "daniel@cochrans.org"}, function(err, emails) {
+      if( err || !emails) console.log("No users found");
+      else emails.forEach( function(userEmail) {
+        console.log(userEmail);
+      } );
+    });
+}
 
 // Enable Socket.io
 var server = http.createServer(app).listen( app.get('port') );
