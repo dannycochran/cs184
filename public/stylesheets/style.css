@@ -38,6 +38,7 @@ canvas {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 15px;
     font-size: 40px;
     color: white;
     font-family: Rockwell, Georgia;
