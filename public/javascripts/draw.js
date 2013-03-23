@@ -124,7 +124,7 @@
                 playColor = eColor;
                 restoreColors(count);
             } else {
-                project.activeLayer.children[count+5].style.fillColor = eColor;
+                project.activeLayer.children[count+5].style.fillColor = eLittleColor;
                 playColor = eLittleColor;
                 restoreColors(count+5);
             }
